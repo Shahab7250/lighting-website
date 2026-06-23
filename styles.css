@@ -2451,6 +2451,24 @@ section {
 .showcase-section .showcase-header {
   text-align: center;
   padding: 0 24px 40px;
+  width: 100%;
+}
+
+.showcase-section .showcase-header .section-title {
+  color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.showcase-section .showcase-header .section-title span {
+  color: var(--gold);
+}
+
+.showcase-section .showcase-header .section-desc {
+  color: rgba(255,248,240,0.80);
+  text-align: center;
+  margin: 0 auto;
 }
 
 .showcase-slider-wrap {
@@ -2785,7 +2803,6 @@ button {
 
 /* High-contrast section alternation for visual rhythm */
 #services  { background: var(--warm-white); }
-#videos    { background: linear-gradient(160deg, var(--warm-off) 0%, var(--warm-white) 100%); }
 #gallery   { background: var(--warm-white); }
 #showcase  { background: var(--purple-dark); }
 
