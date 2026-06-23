@@ -12,20 +12,22 @@
   --purple-mid:    #3D2580;
   --purple-light:  #5B3FA6;
   --gold:          #FFB800;
-  --gold-dark:     #CC9200;
+  --gold-dark:     #B07D00;
   --gold-light:    #FFD04D;
-  --warm-white:    #FFF8F0;
-  --warm-off:      #F5EEE0;
-  --text-dark:     #1A1A2E;
-  --text-muted:    #6B6080;
-  --card-bg:       rgba(255,248,240,0.07);
-  --glass-bg:      rgba(45,27,105,0.55);
-  --glass-border:  rgba(255,184,0,0.25);
-  --shadow-gold:   0 0 30px rgba(255,184,0,0.35);
+  --warm-white:    #FAFAF8;
+  --warm-off:      #F2EDE4;
+  --text-dark:     #12101E;
+  --text-body:     #1D1530;
+  --text-muted:    #4A3A5E;
+  --card-bg:       rgba(255,252,248,0.08);
+  --glass-bg:      rgba(26,15,62,0.72);
+  --glass-border:  rgba(255,184,0,0.30);
+  --shadow-gold:   0 0 32px rgba(255,184,0,0.40);
+  --shadow-card:   0 4px 24px rgba(18,10,40,0.10);
   --shadow-purple: 0 8px 40px rgba(45,27,105,0.5);
-  --radius:        16px;
-  --radius-sm:     8px;
-  --transition:    0.35s cubic-bezier(0.4,0,0.2,1);
+  --radius:        18px;
+  --radius-sm:     10px;
+  --transition:    0.32s cubic-bezier(0.4,0,0.2,1);
   --font-heading:  'Playfair Display', serif;
   --font-body:     'Poppins', sans-serif;
 }
@@ -45,14 +47,46 @@ html {
 body {
   font-family: var(--font-body);
   background: var(--warm-white);
-  color: var(--text-dark);
+  color: var(--text-body);
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 img { max-width: 100%; display: block; }
 a  { text-decoration: none; color: inherit; }
 ul { list-style: none; }
+
+/* Skip-to-content link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 16px;
+  background: var(--gold);
+  color: var(--purple-dark);
+  padding: 10px 20px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 99999;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* Keyboard focus styles — visible outline for all interactive elements */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Smooth scroll margin so fixed nav doesn't hide section headings */
+section, #hero, #about, #services, #dj-banner, #videos, #showcase, #gallery, #testimonials, #contact {
+  scroll-margin-top: 80px;
+}
 
 /* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar { width: 8px; }
@@ -704,21 +738,24 @@ ul { list-style: none; }
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 4.5vw, 3rem);
   font-weight: 800;
-  color: var(--purple);
+  color: var(--purple-dark);
   line-height: 1.2;
   margin-bottom: 14px;
+  letter-spacing: -0.02em;
 }
 
 .section-title span {
   color: var(--gold-dark);
+  position: relative;
 }
 
 .section-desc {
   font-size: 1rem;
   color: var(--text-muted);
-  max-width: 560px;
+  max-width: 580px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.85;
+  font-weight: 400;
 }
 
 .section-divider {
@@ -761,7 +798,7 @@ section {
    ABOUT SECTION
    ============================================================ */
 #about {
-  background: var(--warm-white);
+  background: linear-gradient(160deg, var(--warm-white) 0%, var(--warm-off) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -2577,10 +2614,11 @@ section {
 
 /* Work description text inside video/work cards */
 .work-desc {
-  font-size: 0.87rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.75;
+  line-height: 1.85;
   margin-top: 8px;
+  font-weight: 400;
 }
 
 /* Make video-thumb taller now it's the main visual */
@@ -2592,4 +2630,59 @@ section {
 
 @media (max-width: 480px) {
   .video-thumb { height: 160px; }
+}
+
+/* ============================================================
+   PERFORMANCE & ACCESSIBILITY — ADDITIONS
+   ============================================================ */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Improve image rendering */
+img {
+  image-rendering: auto;
+  content-visibility: auto;
+}
+
+/* Better button base reset for accessibility */
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+/* High-contrast section alternation for visual rhythm */
+#services  { background: var(--warm-white); }
+#videos    { background: linear-gradient(160deg, var(--warm-off) 0%, var(--warm-white) 100%); }
+#gallery   { background: var(--warm-white); }
+#showcase  { background: var(--purple-dark); }
+
+/* Improve gallery overlay for better contrast */
+.gallery-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(18,10,40,0.85) 0%,
+    rgba(18,10,40,0.20) 50%,
+    transparent 100%
+  );
+}
+
+/* Better link underline for inline links */
+a[href]:not([class]) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Print styles — hide nav, footer animations etc */
+@media print {
+  #navbar, .whatsapp-float, #backToTop, #preloader { display: none !important; }
+  body { background: #fff; color: #000; }
+  a::after { content: ' (' attr(href) ')'; font-size: 0.8rem; }
 }
