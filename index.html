@@ -1009,7 +1009,7 @@
             </div>
 
             <div class="form-group">
-              <label for="message">Message / Requirements</label>
+              <label for="message">Message / Requirements <span style="font-size:0.78rem;color:var(--text-muted);font-weight:400;">(optional)</span></label>
               <textarea id="message" name="message" placeholder="Tell us about your event — venue, expected guests, special requirements..."></textarea>
             </div>
 
@@ -1043,11 +1043,19 @@
       referrerpolicy="no-referrer-when-downgrade"
       title="Deepak Lights & Events location on Google Maps">
     </iframe>
+    <!-- Transparent overlay — any click anywhere on the map opens Google Maps -->
+    <a class="map-click-overlay"
+       href="https://www.google.com/maps/place/Deepak+Light+And+Royal+Night+D.J/@24.7887721,85.0034366,17z"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Open shop location in Google Maps">
+      <span class="map-click-hint">📍 Click to open in Google Maps</span>
+    </a>
     <div class="map-overlay-text" aria-hidden="true">
       <strong>📍 Deepak Lights &amp; Events</strong>
       Koeri Bari, Near Hanuman Mandir<br>
       Gaya, Bihar – 823001<br>
-      <a href="https://maps.google.com/?q=Deepak+Light+And+Royal+Night+DJ+Gaya" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light); font-size:0.8rem;">Open in Google Maps ↗</a>
+      <span style="color:var(--gold-light); font-size:0.78rem;">↗ Click map to navigate</span>
     </div>
   </div>
 </div>

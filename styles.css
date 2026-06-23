@@ -1847,6 +1847,7 @@ section {
 
 .map-wrapper {
   position: relative;
+  cursor: pointer;
 }
 
 .map-wrapper iframe {
@@ -1855,6 +1856,50 @@ section {
   height: 450px;
   border: none;
   filter: grayscale(0%) contrast(1);
+  transition: filter 0.3s ease;
+}
+
+.map-wrapper:hover iframe {
+  filter: brightness(0.92) contrast(1.05);
+}
+
+/* Transparent full-cover link that intercepts all map clicks */
+.map-click-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  text-decoration: none;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.map-click-overlay:hover {
+  background: rgba(45,27,105,0.08);
+}
+
+.map-click-hint {
+  background: rgba(45,27,105,0.85);
+  backdrop-filter: blur(8px);
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,184,0,0.4);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  letter-spacing: 0.3px;
+}
+
+.map-click-overlay:hover .map-click-hint {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .map-overlay-text {
@@ -2010,22 +2055,30 @@ section {
 .footer-links a {
   font-size: 0.87rem;
   color: rgba(255,248,240,0.65);
-  transition: color var(--transition), padding-left var(--transition);
+  transition: color var(--transition), padding-left var(--transition), letter-spacing var(--transition);
   display: flex;
   align-items: center;
   gap: 8px;
+  border-radius: 6px;
+  padding: 3px 6px 3px 0;
 }
 
 .footer-links a::before {
   content: '›';
   color: var(--gold);
   font-size: 1rem;
-  transition: transform var(--transition);
+  transition: transform var(--transition), color var(--transition);
 }
 
 .footer-links a:hover {
+  color: #FFFFFF;
+  padding-left: 8px;
+  letter-spacing: 0.2px;
+}
+
+.footer-links a:hover::before {
+  transform: translateX(3px);
   color: var(--gold-light);
-  padding-left: 6px;
 }
 
 .footer-contact-items {
@@ -2041,12 +2094,27 @@ section {
   font-size: 0.87rem;
   color: rgba(255,248,240,0.65);
   line-height: 1.5;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+  cursor: default;
+}
+
+.footer-contact-item:hover {
+  background: rgba(255,184,0,0.08);
+  color: rgba(255,248,240,0.90);
+  transform: translateX(3px);
 }
 
 .footer-contact-icon {
   flex-shrink: 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 1px;
+  transition: transform var(--transition);
+}
+
+.footer-contact-item:hover .footer-contact-icon {
+  transform: scale(1.2);
 }
 
 .footer-contact-item a {
@@ -2055,7 +2123,9 @@ section {
 }
 
 .footer-contact-item a:hover {
-  color: var(--gold);
+  color: var(--gold-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .footer-bottom {
