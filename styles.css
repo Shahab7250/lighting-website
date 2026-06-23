@@ -1882,24 +1882,26 @@ section {
 }
 
 .map-click-hint {
-  background: rgba(45,27,105,0.85);
+  background: rgba(45,27,105,0.90);
   backdrop-filter: blur(8px);
   color: var(--gold-light);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  padding: 10px 22px;
+  padding: 12px 28px;
   border-radius: 50px;
-  border: 1px solid rgba(255,184,0,0.4);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(255,184,0,0.5);
+  opacity: 1;
+  transform: translateY(0);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   pointer-events: none;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .map-click-overlay:hover .map-click-hint {
-  opacity: 1;
-  transform: translateY(0);
+  background: rgba(45,27,105,1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(255,184,0,0.3);
 }
 
 .map-overlay-text {
