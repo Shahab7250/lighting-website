@@ -557,15 +557,6 @@
       </div>
 
       <div class="showcase-slide">
-        <img src="images/background.jpg" alt="Event lighting" />
-        <div class="showcase-caption">
-          <span class="showcase-caption-tag">Lighting</span>
-          <h3>Decorative Event Lighting</h3>
-          <p>Fairy lights, LEDs and ambient lighting for every mood</p>
-        </div>
-      </div>
-
-      <div class="showcase-slide">
         <img src="images/1b.jpg" alt="Decoration work" />
         <div class="showcase-caption">
           <span class="showcase-caption-tag">Decoration</span>
@@ -619,6 +610,24 @@
         </div>
       </div>
 
+      <div class="showcase-slide">
+        <img src="images/whatsapp-new-1.jpeg" alt="Recent event decoration" />
+        <div class="showcase-caption">
+          <span class="showcase-caption-tag">New</span>
+          <h3>Recent Event Decoration</h3>
+          <p>Vibrant & personalised décor crafted with love</p>
+        </div>
+      </div>
+
+      <div class="showcase-slide">
+        <img src="images/whatsapp-new-2.jpeg" alt="Recent celebration setup" />
+        <div class="showcase-caption">
+          <span class="showcase-caption-tag">New</span>
+          <h3>Recent Celebration Setup</h3>
+          <p>Every light and flower placed with passion</p>
+        </div>
+      </div>
+
     </div>
 
     <button class="showcase-arrow sc-prev" onclick="showcaseNav(-1)" aria-label="Previous slide">&#10094;</button>
@@ -636,6 +645,7 @@
       <span class="sc-dot" onclick="showcaseGoTo(8)"></span>
       <span class="sc-dot" onclick="showcaseGoTo(9)"></span>
       <span class="sc-dot" onclick="showcaseGoTo(10)"></span>
+      <span class="sc-dot" onclick="showcaseGoTo(11)"></span>
     </div>
   </div>
 </section>
@@ -659,66 +669,117 @@
 
   </div>
 
-  <!-- Gallery grid (full width) -->
-  <div class="section-container">
-    <div class="gallery-grid" id="galleryGrid">
+  <!-- Gallery grid (full viewport width) -->
+  <div class="gallery-grid" id="galleryGrid">
 
-      <div class="gallery-item" data-index="0" onclick="openLightbox(0)">
-        <img src="images/outdoor-wedding-decor-ideas-3-scaled.jpg" alt="Outdoor wedding decoration" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+    <div class="gallery-item" data-index="0" onclick="openLightbox(0)">
+      <img src="images/outdoor-wedding-decor-ideas-3-scaled.jpg" alt="Outdoor wedding decoration" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Grand Outdoor Wedding — Gaya, Bihar</p>
+        <p class="gallery-caption-desc">Elegant floral arrangements, draped mandap & fairy lights crafted for a dream wedding celebration.</p>
       </div>
-
-      <div class="gallery-item" data-index="1" onclick="openLightbox(1)">
-        <img src="images/wedding-stage-bg.jpeg" alt="Wedding stage decoration" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="2" onclick="openLightbox(2)">
-        <img src="images/dj-party-service-612.jpg" alt="DJ night party event" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="3" onclick="openLightbox(3)">
-        <img src="images/3-1.jpg" alt="Stage and mandap setup" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="4" onclick="openLightbox(4)">
-        <img src="images/background.jpg" alt="Event lighting and decoration" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="5" onclick="openLightbox(5)">
-        <img src="images/1b.jpg" alt="Decorative lighting setup" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="6" onclick="openLightbox(6)">
-        <img src="images/images-2.jpeg" alt="Event arrangements" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="7" onclick="openLightbox(7)">
-        <img src="images/images-3.jpeg" alt="Celebration decoration" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="8" onclick="openLightbox(8)">
-        <img src="images/whatsapp-event.jpeg" alt="Event photo" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="9" onclick="openLightbox(9)">
-        <img src="images/img-6730.webp" alt="Event setup" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
-      <div class="gallery-item" data-index="10" onclick="openLightbox(10)">
-        <img src="images/recent-2.jpg" alt="Latest event work" loading="lazy"/>
-        <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
-      </div>
-
     </div>
+
+    <div class="gallery-item" data-index="1" onclick="openLightbox(1)">
+      <img src="images/wedding-stage-bg.jpeg" alt="Wedding stage decoration" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Royal Wedding Stage Setup</p>
+        <p class="gallery-caption-desc">Luxurious stage decoration with fresh flowers, LED backdrops & stunning varmala arrangements.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="2" onclick="openLightbox(2)">
+      <img src="images/dj-party-service-612.jpg" alt="DJ night party event" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">DJ Night & Dance Floor</p>
+        <p class="gallery-caption-desc">Professional DJ system, moving head lights & full sound setup for high-energy party nights.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="3" onclick="openLightbox(3)">
+      <img src="images/3-1.jpg" alt="Stage and mandap setup" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Stage & Mandap Decoration</p>
+        <p class="gallery-caption-desc">Traditional mandap with modern lighting — a perfect fusion for sacred wedding ceremonies.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="4" onclick="openLightbox(4)">
+      <img src="images/1b.jpg" alt="Decorative lighting setup" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Decorative Lighting Setup</p>
+        <p class="gallery-caption-desc">Artistic LED & fairy light arrangements creating a magical atmosphere for any celebration.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="5" onclick="openLightbox(5)">
+      <img src="images/images-2.jpeg" alt="Event arrangements" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Elegant Event Arrangements</p>
+        <p class="gallery-caption-desc">Floral, fabric & light — all coming together beautifully for a truly memorable celebration.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="6" onclick="openLightbox(6)">
+      <img src="images/images-3.jpeg" alt="Celebration decoration" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Celebration Setup — Gaya, Bihar</p>
+        <p class="gallery-caption-desc">Trusted by 1000+ happy families for bringing every celebration to life with colour & elegance.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="7" onclick="openLightbox(7)">
+      <img src="images/whatsapp-event.jpeg" alt="Live event by Deepak Lights" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Live Event — Deepak Lights & Events</p>
+        <p class="gallery-caption-desc">Our team transforming a venue into a spectacular event space with precision & creativity.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="8" onclick="openLightbox(8)">
+      <img src="images/img-6730.webp" alt="Professional event setup" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Professional Event Setup</p>
+        <p class="gallery-caption-desc">Flawless execution — from concept to completion, every detail handled with care & artistry.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="9" onclick="openLightbox(9)">
+      <img src="images/recent-2.jpg" alt="Latest event work" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Latest Event — Gaya, Bihar</p>
+        <p class="gallery-caption-desc">Our most recent work — fresh from the field with cutting-edge decoration trends of 2026.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="10" onclick="openLightbox(10)">
+      <img src="images/whatsapp-new-1.jpeg" alt="Recent event decoration" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Recent Event Decoration</p>
+        <p class="gallery-caption-desc">Vibrant & personalised décor crafted with love — every event tells a unique story.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-index="11" onclick="openLightbox(11)">
+      <img src="images/whatsapp-new-2.jpeg" alt="Recent celebration setup" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-overlay-icon">🔍</span></div>
+      <div class="gallery-caption">
+        <p class="gallery-caption-title">Recent Celebration Setup</p>
+        <p class="gallery-caption-desc">A beautiful snapshot from our recent event — where every light and flower was placed with passion.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -875,15 +936,15 @@
             </div>
           </div>
 
-          <div class="contact-card">
+          <a class="contact-card contact-card-link" href="https://maps.google.com/?q=Deepak+Light+And+Royal+Night+DJ+Koeri+Bari+Gaya+Bihar" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">
             <div class="contact-card-icon">📍</div>
             <div class="contact-card-body">
-              <div class="contact-card-label">Our Address</div>
+              <div class="contact-card-label">Our Address <span style="font-size:0.75rem;color:var(--gold);">↗ Open in Maps</span></div>
               <div class="contact-card-value">
                 Koeri Bari, Near Hanuman Mandir,<br>Gaya, Bihar – 823001
               </div>
             </div>
-          </div>
+          </a>
 
           <div class="contact-card">
             <div class="contact-card-icon">🕐</div>
@@ -1092,7 +1153,7 @@
           </div>
           <div class="footer-contact-item">
             <span class="footer-contact-icon">📍</span>
-            <span>Koeri Bari, Near Hanuman Mandir, Gaya, Bihar – 823001</span>
+            <a href="https://maps.google.com/?q=Deepak+Light+And+Royal+Night+DJ+Koeri+Bari+Gaya+Bihar" target="_blank" rel="noopener noreferrer" style="color:inherit;">Koeri Bari, Near Hanuman Mandir, Gaya, Bihar – 823001</a>
           </div>
           <div class="footer-contact-item">
             <span class="footer-contact-icon">🕐</span>
@@ -1106,7 +1167,7 @@
     <!-- Footer bottom -->
     <div class="footer-bottom">
       <p class="footer-copyright">
-        &copy; 2024 <a href="#hero">Deepak Lights &amp; Events</a>. All Rights Reserved.
+        &copy; 2026 <a href="#hero">Deepak Lights &amp; Events</a>. All Rights Reserved.
       </p>
       <p class="footer-love">
         Designed with <span>❤️</span> for Deepak Lights &amp; Events
@@ -1252,13 +1313,14 @@ var galleryImages = [
   { src: 'images/wedding-stage-bg.jpeg',                    alt: 'Wedding stage decoration'      },
   { src: 'images/dj-party-service-612.jpg',                 alt: 'DJ night party event'          },
   { src: 'images/3-1.jpg',                                  alt: 'Stage and mandap setup'        },
-  { src: 'images/background.jpg',                           alt: 'Event lighting and decoration' },
   { src: 'images/1b.jpg',                                   alt: 'Decorative lighting setup'     },
   { src: 'images/images-2.jpeg',                            alt: 'Event arrangements'            },
   { src: 'images/images-3.jpeg',                            alt: 'Celebration decoration'        },
-  { src: 'images/whatsapp-event.jpeg',                      alt: 'Event photo'                   },
-  { src: 'images/img-6730.webp',                            alt: 'Event setup'                   },
-  { src: 'images/recent-2.jpg',                             alt: 'Latest event work'             }
+  { src: 'images/whatsapp-event.jpeg',                      alt: 'Live event photo'              },
+  { src: 'images/img-6730.webp',                            alt: 'Professional event setup'      },
+  { src: 'images/recent-2.jpg',                             alt: 'Latest event work'             },
+  { src: 'images/whatsapp-new-1.jpeg',                      alt: 'Recent event decoration'       },
+  { src: 'images/whatsapp-new-2.jpeg',                      alt: 'Recent celebration setup'      }
 ];
 
 var currentLightboxIndex = 0;
@@ -1297,17 +1359,30 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'ArrowRight')  lightboxNav(1);
 });
 
-/* ---- Fullscreen Showcase Slider ---- */
+/* ---- Fullscreen Showcase Slider (right-to-left slide) ---- */
 var scCurrent = 0;
 var scSlides   = document.querySelectorAll('.showcase-slide');
 var scDots     = document.querySelectorAll('.sc-dot');
 
 function showcaseGoTo(index) {
-  scSlides[scCurrent].classList.remove('active');
-  scDots[scCurrent].classList.remove('active');
+  var prev = scCurrent;
   scCurrent = (index + scSlides.length) % scSlides.length;
+  if (prev === scCurrent) return;
+
+  /* Mark outgoing slide as leaving (slides left) */
+  scSlides[prev].classList.add('leaving');
+  scSlides[prev].classList.remove('active');
+  scDots[prev].classList.remove('active');
+
+  /* Bring in new slide from the right */
   scSlides[scCurrent].classList.add('active');
   scDots[scCurrent].classList.add('active');
+
+  /* Clean up leaving class after transition ends */
+  var leavingSlide = scSlides[prev];
+  setTimeout(function () {
+    leavingSlide.classList.remove('leaving');
+  }, 750);
 }
 
 function showcaseNav(dir) { showcaseGoTo(scCurrent + dir); }
