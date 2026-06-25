@@ -53,6 +53,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overscroll-behavior-y: contain;       /* prevents scroll chain lag */
+  -webkit-overflow-scrolling: touch;    /* smooth momentum scroll on iOS */
 }
 
 img { max-width: 100%; display: block; }
@@ -2865,4 +2867,108 @@ a[href]:not([class]) {
   #navbar, .whatsapp-float, #backToTop, #preloader { display: none !important; }
   body { background: #fff; color: #000; }
   a::after { content: ' (' attr(href) ')'; font-size: 0.8rem; }
+}
+
+/* ============================================================
+   MOBILE PERFORMANCE — fixes for lag on phones/tablets
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* 1. Kill the 8 bokeh orbs (each is filter:blur(70px) + animation = GPU killer) */
+  .bokeh-layer { display: none !important; }
+
+  /* 2. Kill floating particles and sparkles */
+  .particles, .sparkle-layer { display: none !important; }
+
+  /* 3. Disable expensive glow pulse on hero title */
+  .hero-title-highlight { animation: none !important; }
+
+  /* 4. Strip backdrop-filter from all elements — replace with solid backgrounds */
+  nav#navbar,
+  nav#navbar.scrolled {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(26,15,62,0.97) !important;
+  }
+
+  .hero-badge {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255,255,255,0.18) !important;
+  }
+
+  .showcase-caption {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .map-click-overlay,
+  .map-click-hint {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(45,27,105,0.92) !important;
+  }
+
+  .map-overlay-text {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(45,27,105,0.96) !important;
+  }
+
+  .lightbox {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* 5. Reduce gallery image height on mobile — 85vh × 12 images is enormous */
+  .gallery-item { height: 60vw; min-height: 220px; }
+
+  /* 6. Fix full-width gallery trick so it never causes horizontal scroll */
+  #gallery .gallery-grid {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* 7. Contain gallery items to prevent full-page reflow on hover */
+  .gallery-item { contain: layout style paint; }
+
+  /* 8. Showcase: reduce height on small screens */
+  .showcase-slider-wrap { height: 56vw; min-height: 240px; }
+
+  /* 9. Add GPU hints to showcase slides so they're pre-composited */
+  .showcase-slide {
+    will-change: transform, opacity;
+    contain: layout style paint;
+  }
+
+  /* 10. Hero: skip saturate filter (expensive) */
+  .hero-bg-photo { filter: brightness(0.42) !important; }
+
+  /* 11. Reduce hero radial overlay complexity */
+  .hero-radial { display: none; }
+
+  /* 12. Simplify section transitions */
+  .fade-in, .fade-in-left, .fade-in-right {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  /* 13. Disable hover transforms on touch devices (no hover on phone anyway) */
+  .service-card:hover,
+  .video-card:hover,
+  .gallery-item:hover img { transform: none !important; }
+
+  /* 14. Reduce DJ banner filter */
+  .dj-banner-bg { filter: brightness(0.20) !important; }
+
+  /* 15. Videos pseudo-elements are heavy radial gradients — hide on mobile */
+  #videos::before, #videos::after { display: none; }
+}
+
+/* Extra-small phones */
+@media (max-width: 480px) {
+  .gallery-item { height: 72vw; min-height: 200px; }
+  .showcase-slider-wrap { height: 65vw; min-height: 220px; }
+  .gallery-caption-title { font-size: 1rem; }
+  .gallery-caption-desc  { font-size: 0.78rem; }
+  .gallery-caption { padding: 18px 16px 14px; }
 }
