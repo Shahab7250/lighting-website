@@ -49,12 +49,14 @@ body {
   background: var(--warm-white);
   color: var(--text-body);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overscroll-behavior-y: contain;       /* prevents scroll chain lag */
-  -webkit-overflow-scrolling: touch;    /* smooth momentum scroll on iOS */
+  overscroll-behavior: none;            /* blocks horizontal AND vertical rubber-band */
+  -webkit-overflow-scrolling: touch;
 }
 
 img { max-width: 100%; display: block; }
@@ -1015,6 +1017,7 @@ section {
 #services {
   background: linear-gradient(180deg, var(--warm-off) 0%, var(--warm-white) 100%);
   position: relative;
+  overflow: hidden;
 }
 
 #services::after {
@@ -1637,6 +1640,7 @@ section {
 #contact {
   background: var(--warm-white);
   position: relative;
+  overflow: hidden;
 }
 
 .contact-grid {
@@ -1875,11 +1879,13 @@ section {
    ============================================================ */
 #map-section {
   padding: 0;
+  overflow: hidden;
 }
 
 .map-wrapper {
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .map-wrapper iframe {
@@ -2508,8 +2514,9 @@ section {
 .showcase-slider-wrap {
   position: relative;
   width: 100%;
-  height: 100vh;             /* full viewport height */
+  height: 100vh;
   overflow: hidden;
+  clip-path: inset(0);        /* Safari: forces transform children to clip at boundary */
   background: #000;
 }
 
