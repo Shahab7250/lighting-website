@@ -42,6 +42,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;   /* iOS Safari: body alone is not enough */
+  max-width: 100%;
 }
 
 body {
@@ -88,6 +90,8 @@ ul { list-style: none; }
 /* Smooth scroll margin so fixed nav doesn't hide section headings */
 section, #hero, #about, #services, #dj-banner, #videos, #showcase, #gallery, #testimonials, #contact {
   scroll-margin-top: 80px;
+  max-width: 100%;     /* nothing ever wider than the viewport */
+  box-sizing: border-box;
 }
 
 /* ---------- Scrollbar ---------- */
@@ -291,6 +295,7 @@ section, #hero, #about, #services, #dj-banner, #videos, #showcase, #gallery, #te
     right: -100%;
     height: 100vh;
     width: 280px;
+    max-width: calc(100vw - 48px);  /* never wider than phone screen */
     background: var(--purple-dark);
     flex-direction: column;
     align-items: flex-start;
@@ -299,6 +304,9 @@ section, #hero, #about, #services, #dj-banner, #videos, #showcase, #gallery, #te
     padding: 40px 36px;
     transition: right var(--transition);
     border-left: 1px solid var(--glass-border);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .nav-links.open {
@@ -1271,6 +1279,7 @@ section {
 #gallery {
   background: var(--warm-white);
   position: relative;
+  overflow: hidden;
 }
 
 .gallery-grid {
@@ -2471,6 +2480,8 @@ section {
 .showcase-section {
   padding: 80px 0 0;
   background: var(--purple-dark);
+  overflow: hidden;  /* contain slide translateX(100%) offscreen slide */
+  max-width: 100%;
 }
 
 .showcase-section .showcase-header {
@@ -2831,10 +2842,10 @@ button {
 #gallery   { background: var(--warm-white); }
 #showcase  { background: var(--purple-dark); }
 
-/* Gallery is full-width — override any container padding */
+/* Gallery grid fills its parent section naturally — no 100vw trick needed */
 #gallery .gallery-grid {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
+  margin-left: 0;
 }
 
 /* Clickable location card */
@@ -2923,11 +2934,7 @@ a[href]:not([class]) {
   /* 5. Reduce gallery image height on mobile — 85vh × 12 images is enormous */
   .gallery-item { height: 60vw; min-height: 220px; }
 
-  /* 6. Fix full-width gallery trick so it never causes horizontal scroll */
-  #gallery .gallery-grid {
-    width: 100%;
-    margin-left: 0;
-  }
+  /* 6. Gallery grid is naturally 100% wide — no override needed */
 
   /* 7. Contain gallery items to prevent full-page reflow on hover */
   .gallery-item { contain: layout style paint; }
